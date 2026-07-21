@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maizon Concept · Arte en Madera</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- ==================== NAVEGACIÓN ==================== -->
+    <nav class="nav-glass" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-text">MAIZON</span>
+                <span class="logo-dot">·</span>
+                <span class="logo-subtext">concept</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#inicio" class="nav-item active" data-section="inicio">Inicio</a>
+                <a href="#destacados" class="nav-item" data-section="destacados">Destacados</a>
+                <a href="#nosotros" class="nav-item" data-section="nosotros">Esencia</a>
+                <a href="#catalogo" class="nav-item" data-section="catalogo">Colección</a>
+                <a href="#contacto" class="nav-item" data-section="contacto">Contacto</a>
+            </div>
+            <button aria-label="Toggle navigation" type="button" class="nav-toggle" id="navToggle" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="inicio" class="hero-minimal">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text-reveal">
+                <span class="hero-eyebrow" id="heroEyebrow"></span>
+                <h1 class="hero-title">
+                    <span class="text-reveal">El arte</span>
+                    <span class="text-reveal">de lo</span>
+                    <span class="text-reveal text-accent">artesanal</span>
+                </h1>
+                <p class="hero-description" id="heroDescription">Piezas de madera pintadas a mano que transforman espacios en experiencias únicas.</p>
+
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="card-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>Pieza destacada</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-tag">Nueva colección</span>
+                        <h3>Serie</h3>
+                        <p>Piezas únicas · Hechas a mano</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CARRUSEL DESTACADOS ==================== -->
+    <section id="destacados" class="featured-carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-header">
+                <span class="section-number">Destacados</span>
+                <h2 class="section-title">Piezas destacadas</h2>
+                <p class="section-subtitle">Nuestra selección de obras más especiales</p>
+            </div>
+
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Las slides se generan dinámicamente -->
+                </div>
+
+                <button aria-label="Toggle navigation" type="button" class="carousel-btn carousel-btn-prev" onclick="prevSlide()" title="Anterior" >
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button aria-label="Toggle navigation" type="button" class="carousel-btn carousel-btn-next" onclick="nextSlide()" title="Siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="carousel-indicators" id="carouselIndicators"></div>
+            <div class="carousel-counter" id="carouselCounter">1 / 4</div>
+        </div>
+    </section>
+
+    <!-- ==================== NOSOTROS ==================== -->
+    <section id="nosotros" class="about-minimal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title" id="aboutTitle">Nuestra esencia</h2>
+                <p class="section-subtitle">Creando piezas que cuentan historias</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-visual">
+                    <div class="about-image-container">
+                        <div class="image-frame">
+                            <div class="frame-content">
+                                <i class="fas fa-tree"></i>
+                                <span>Taller artesanal</span>
+                            </div>
+                        </div>
+                        <div class="floating-card">
+                            <span class="floating-number">10+</span>
+                            <span class="floating-text">Años de experiencia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="text-large">En <strong>Maizon Concept</strong>, cada pieza de madera es un lienzo donde la tradición artesanal se encuentra con el diseño contemporáneo.</p>
+                        <p id="aboutTextContent">Trabajamos con maderas seleccionadas y técnicas de pintura a mano que garantizan piezas únicas, irrepetibles y llenas de personalidad.</p>
+                    </div>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon"><i class="fas fa-hand-sparkles"></i></div>
+                            <h4>Artesanía pura</h4>
+                            <p>Cada trazo es único e irrepetible</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon"><i class="fas fa-leaf"></i></div>
+                            <h4>Maderas nobles</h4>
+                            <p>Selección cuidadosa de materiales</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon"><i class="fas fa-palette"></i></div>
+                            <h4>Diseño personalizado</h4>
+                            <p>Adaptamos cada pieza a tu espacio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CATÁLOGO ==================== -->
+    <section id="catalogo" class="catalog-minimal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Nuestra colección</h2>
+                <p class="section-subtitle">Piezas que transforman espacios</p>
+            </div>
+            <div class="catalog-controls">
+                <div class="filter-pills">
+                    <button type="button" class="pill active" data-filter="all">Todas</button>
+                    <button type="button" class="pill" data-filter="decorativas">Decorativas</button>
+                    <button type="button" class="pill" data-filter="pared">Centro De Mesa</button>
+                    <button type="button" class="pill" data-filter="temporada">Temporadas</button>
+                    <button type="button" class="pill" data-filter="grandes">Gran formato</button>
+                </div>
+            </div>
+            <div class="catalog-masonry" id="catalogGrid"></div>
+            <div class="catalog-empty" id="catalogEmpty" style="display: none;">
+                <i class="fas fa-box-open"></i>
+                <p>Próximamente nuevas piezas</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACTO ==================== -->
+    <section id="contacto" class="contact-minimal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Hablemos</h2>
+                <p class="section-subtitle">Estamos aquí para crear tu pieza perfecta</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info-cards">
+                    <div class="info-card">
+                        <div class="info-card-icon"><i class="fas fa-map-pin"></i></div>
+                        <div class="info-card-content">
+                            <h4>Visítanos</h4>
+                            <p id="contactAddress">Calle del Arte, 123<br>Ciudad Creativa</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="info-card-content">
+                            <h4>Llámanos</h4>
+                            <p id="contactPhone">+34 123 456 789</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="info-card-content">
+                            <h4>Email</h4>
+                            <p id="contactEmail">info@maizonconcept.com</p>
+                        </div>
+                    </div>
+                    <div class="social-connect">
+                        <p>Síguenos en redes</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link" id="socialInstagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link" id="socialFacebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-link" id="socialPinterest" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" class="social-link" id="socialWhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form-minimal" onsubmit="handleContactSubmit(event)">
+                    <div class="form-group">
+                        <input type="text" required placeholder=" ">
+                        <label>Nombre completo</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" required placeholder=" ">
+                        <label>Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea required placeholder=" " rows="4"></textarea>
+                        <label>Cuéntanos tu idea</label>
+                    </div>
+                    <button type="submit" class="btn-send">
+                        Enviar mensaje
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer-minimal">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <span class="logo-text">MAIZON</span>
+                        <span class="logo-dot">·</span>
+                        <span class="logo-subtext">concept</span>
+                    </a>
+                    <p>Arte y artesanía en madera pintada a mano</p>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Maizon Concept. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../javascript/app.js"></script>
+</body>
+</html>

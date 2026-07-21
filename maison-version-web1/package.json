@@ -1,0 +1,12 @@
+{
+  "name": "maison-frontend",
+  "version": "1.0.0",
+  "description": "Frontend de Maison Concept",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "dependencies": {
+    "@sanity/client": "^6.21.0"
+  }
+}
