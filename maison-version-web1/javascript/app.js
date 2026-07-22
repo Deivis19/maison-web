@@ -1,4 +1,4 @@
-import {client} from './sanityClient.js'
+import {client, fetchWithPost} from './sanityClient.js'
 
 // ==================== DATOS INICIALES ====================
 let products = []
@@ -27,6 +27,7 @@ let currentFilter = 'all'
 // ==================== FETCH CMS DATA ====================
 async function fetchCMSData() {
     try {
+        // Usar fetchWithPost para forzar POST y evitar caché
         const productsQuery = `*[_type == 'producto'] {
             _id,
             name,
@@ -37,15 +38,15 @@ async function fetchCMSData() {
             colors,
             category->{_id, name, slug}
         }`
-        products = await client.fetch(productsQuery)
+        products = await fetchWithPost(productsQuery)
 
         const categoriesQuery = `*[_type == 'category'] | order(order asc) {_id, name, slug}`
-        categories = await client.fetch(categoriesQuery)
+        categories = await fetchWithPost(categoriesQuery)
 
         const settingsQuery = `*[_id == 'siteSettings'][0] {
             siteName, contactEmail, phoneNumber, address, socialMedia
         }`
-        const settings = await client.fetch(settingsQuery)
+        const settings = await fetchWithPost(settingsQuery)
         if (settings) {
             if (settings.contactEmail) siteContent.contactEmail = settings.contactEmail
             if (settings.phoneNumber) siteContent.contactPhone = settings.phoneNumber
@@ -57,14 +58,14 @@ async function fetchCMSData() {
         }
 
         const homeQuery = `*[_id == 'home'][0] {heroTitle, heroSubtitle, aboutPreview, ctaText}`
-        const home = await client.fetch(homeQuery)
+        const home = await fetchWithPost(homeQuery)
         if (home) {
             if (home.heroTitle) siteContent.heroEyebrow = home.heroTitle
             if (home.heroSubtitle) siteContent.heroDescription = home.heroSubtitle
             if (home.aboutPreview) siteContent.aboutText = home.aboutPreview
         }
 
-        console.log('✅ Datos cargados desde Sanity CMS')
+        console.log('✅ Datos cargados desde Sanity CMS (POST directo, sin caché)')
     } catch (error) {
         console.error('❌ Error cargando datos de Sanity:', error)
     }
